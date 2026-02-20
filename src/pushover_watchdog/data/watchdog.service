@@ -1,0 +1,12 @@
+[Unit]
+Description=Pushover watchdog (RAM/Disk)
+
+[Service]
+Type=simple
+ExecStart=watchdog --threshold 0.8 --interval 60 --disk-path /home
+Restart=always
+RestartSec=5
+EnvironmentFile=%h/.config/pushover-watchdog/env
+
+[Install]
+WantedBy=default.target
