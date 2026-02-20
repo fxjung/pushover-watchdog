@@ -1,0 +1,17 @@
+[project]
+name = "pushover-watchdog"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Felix Jung", email = "felix.jung@tu-dresden.de" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+pushover-watchdog = "pushover_watchdog:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
