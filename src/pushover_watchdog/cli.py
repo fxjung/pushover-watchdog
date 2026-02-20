@@ -1,4 +1,5 @@
 import argparse
+import os
 import socket
 import time
 from dataclasses import dataclass
@@ -117,8 +118,9 @@ def main() -> int:
     if args.no_ram and args.no_disk:
         raise SystemExit("Nothing to do: both --no-ram and --no-disk were set.")
 
-    user_key = (args.pushover_user_key or "").strip()
-    app_token = (args.pushover_app_token or "").strip()
+    user_key = (args.pushover_user_key or os.environ.get(ENV_USER_KEY, "")).strip()
+    app_token = (args.pushover_app_token or os.environ.get(ENV_APP_TOKEN, "")).strip()
+
     if not user_key or not app_token:
         raise SystemExit(
             "Missing Pushover credentials.\n"
