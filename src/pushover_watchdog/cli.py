@@ -9,7 +9,8 @@ import requests
 
 
 PUSHOVER_API_URL = "https://api.pushover.net/1/messages.json"
-
+ENV_USER_KEY = "PUSHOVER_USER_KEY"
+ENV_APP_TOKEN = "PUSHOVER_APP_TOKEN"
 
 @dataclass
 class TargetState:
